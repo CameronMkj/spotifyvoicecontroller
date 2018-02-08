@@ -56,14 +56,14 @@ while True:
                 pause.click()
 
             # NEXT
-            elif wordS[0:4] == "stop":
+            elif wordS[0:4] == "stop" or wordS[0:5] == "pause":
                 mkj.shortimportant("STOP WORKING")
                 pause = browser.find_element_by_xpath("//button[@class='ytp-play-button ytp-button']")
                 pause.click()
 
             # ADD
             elif wordS[0:3] == "add":
-                songOne = [str(wordS[6:40]), "", ""]
+                songOne = [str(wordS[4:40]), "", ""]
                 print(songOne[0])
                 print(songOne[1])
                 print(songOne[2])
@@ -102,8 +102,8 @@ while True:
                 # browser.get(youtubeMusic)
 
             # SEARCH
-            elif wordS[0:6] == "search": 
+            elif wordS[0:10] == "search for": 
                 mkj.shortimportant("SEARCH WORKING")
-                worder = str(wordS[6:40])
+                worder = str(wordS[11:50])
                 youtubeMusic = str("https://www.youtube.com/results?search_query=" + worder)
                 browser.get(youtubeMusic)
